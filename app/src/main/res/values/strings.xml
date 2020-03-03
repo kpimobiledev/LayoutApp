@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LayoutApp</string>
+    <string name="input_name">Input name</string>
+    <string name="change">Change</string>
+    <string name="input_surname">Input surname</string>
+    <string name="name_placeholder">Name</string>
+    <string name="name_pattern">Hi, %1$s %2$s!</string>
+</resources>
