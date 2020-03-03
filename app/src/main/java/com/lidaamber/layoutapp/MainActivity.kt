@@ -14,18 +14,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        changeButton.setOnClickListener {
-            val name = nameEditText.text.toString()
-            val surname = surnameEditText.text.toString()
+        val person = Person("John", "Smith")
 
-            nameTextView.text = name
+        nameTextView.text = person.name
+
+        nameEditText.setText(person.name)
+        surnameEditText.setText(person.surname)
+
+        changeButton.setOnClickListener {
+            person.name = nameEditText.text.toString()
+            person.surname = surnameEditText.text.toString()
+
+            nameTextView.text = person.name
 
             Toast.makeText(
                 this,
-                getString(R.string.name_pattern, name, surname),
+                getString(R.string.name_pattern, person.name, person.surname),
                 Toast.LENGTH_LONG
             ).show()
         }
     }
 
 }
+
+data class Person(var name: String, var surname: String)
